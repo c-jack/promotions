@@ -82,4 +82,13 @@ public class BundlePromotion implements Promotion
      // TODO
     }
 
+
+    /**
+     * @return The factors.
+     */
+    @Override
+    public HashMap<String, Integer> getFactors()
+    {
+        return factors;
+    }
 }

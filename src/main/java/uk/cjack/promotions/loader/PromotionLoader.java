@@ -56,12 +56,20 @@ public class PromotionLoader
         final String promotionLogic = split[ 1 ];
 
 
-        final String fullyQualifiedClassName = "uk.cjack.promotionengine.promotions.%sPromotion";
+        final String fullyQualifiedClassName = "uk.cjack.promotions.promotions.%sPromotion";
         final String classReference = String.format( fullyQualifiedClassName, promotionName );
 
         return ( Promotion ) Class.forName( classReference )
                 .getDeclaredConstructor( String.class )
                 .newInstance( promotionLogic );
 
+    }
+
+    /**
+     * @return The promotionsList.
+     */
+    public List<Promotion> getPromotionsList()
+    {
+        return promotionsList;
     }
 }

@@ -20,13 +20,15 @@ public class CatalogueLoader
 {
     private static final Logger LOGGER = Logger.getLogger( CatalogueLoader.class.getName() );
     private static final String CATALOGUE_FILE_NAME = "catalogue";
-    private final Map<String, Integer> catalogue = new HashMap<>();
+    private static Map<String, Integer> catalogue;
 
     /**
      *
      */
-    public CatalogueLoader()
+    public static void loadCatalogue()
     {
+        catalogue = new HashMap<>();
+
         final List<String> catalogueItems = FileUtil.loadResource( CATALOGUE_FILE_NAME );
         for ( final String catalogueItem : catalogueItems )
         {
@@ -44,7 +46,7 @@ public class CatalogueLoader
     /**
      * Loads the catalogue into a Map
      */
-    public void load( final String catalogueEntry )
+    private static void load( final String catalogueEntry )
     {
         final String[] split = catalogueEntry.split( "," );
 
@@ -55,7 +57,19 @@ public class CatalogueLoader
         {
             throw new RuntimeException( "SKU invalid" );
         }
-        this.catalogue.put( sku, unitCost );
+        catalogue.put( sku, unitCost );
 
+    }
+
+    /**
+     * @return The catalogue.
+     */
+    public static Map<String, Integer> getCatalogue()
+    {
+        if( catalogue == null )
+        {
+            loadCatalogue();
+        }
+        return catalogue;
     }
 }

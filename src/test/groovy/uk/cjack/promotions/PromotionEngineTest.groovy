@@ -1,7 +1,9 @@
 package uk.cjack.promotions
 
 import spock.lang.Specification
-import uk.cjack.promotions.PromotionEngine 
+import uk.cjack.promotions.PromotionEngine
+import uk.cjack.promotions.model.Order
+import uk.cjack.promotions.model.OrderLine
 
 /**
  * Test Class for {@link PromotionEngine}
@@ -21,6 +23,10 @@ class PromotionEngineTest extends Specification {
      */
     def "Scenario A"() {
         given: "An order contains 1 * A, 1 * B, and 1 * C"
+        final Order order = new Order(
+                new OrderLine("A"),
+                new OrderLine("B"),
+                new OrderLine("C"))
 
         when: "I call the promotion engine with the given order"
         promotionEngine = new PromotionEngine(order)

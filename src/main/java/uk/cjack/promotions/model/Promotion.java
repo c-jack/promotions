@@ -3,6 +3,8 @@
  */
 package uk.cjack.promotions.model;
 
+import java.util.HashMap;
+
 /**
  * Interface for a 'Promotion'
  *
@@ -12,4 +14,5 @@ public interface Promotion
 {
 
 
+    HashMap<String, Integer> getFactors();
 }
