@@ -15,4 +15,6 @@ public interface Promotion
 
 
     HashMap<String, Integer> getFactors();
+
+    int getDiscountValue();
 }

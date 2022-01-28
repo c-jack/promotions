@@ -18,6 +18,7 @@ public class Order
     private List<OrderLine> orderLines = new ArrayList<>();
     private Map<String, Integer> orderMap = new HashMap<>();
     private Integer originalOrderValue = 0;
+    private Integer discountTotal = 0;
 
 
     /**
@@ -54,5 +55,29 @@ public class Order
     public Map<String, Integer> getOrderMap()
     {
         return orderMap;
+    }
+
+    /**
+     * @return The originalOrderValue.
+     */
+    public Integer getOriginalOrderValue()
+    {
+        return originalOrderValue;
+    }
+
+    /**
+     * @return The discount.
+     */
+    public Integer getDiscountTotal()
+    {
+        return discountTotal;
+    }
+
+    /**
+     * @param discountAmount The discountAmount to add to discount.
+     */
+    public void addDiscountAmount( final int discountAmount )
+    {
+        this.discountTotal += discountAmount;
     }
 }

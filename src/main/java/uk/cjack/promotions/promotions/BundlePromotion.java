@@ -19,7 +19,7 @@ import uk.cjack.promotions.model.Promotion;
 public class BundlePromotion implements Promotion
 {
     private final HashMap<String, Integer> factors = new HashMap<>();
-    private final long discountValue;
+    private final int discountValue;
 
     private static final String EQUALS = "=";
     private static final String LOOKAHEAD_NUMBER_LETTER_REGEX = "(?<=[0-9]?[A-Z])";
@@ -90,5 +90,14 @@ public class BundlePromotion implements Promotion
     public HashMap<String, Integer> getFactors()
     {
         return factors;
+    }
+
+    /**
+     * @return The discountValue.
+     */
+    @Override
+    public int getDiscountValue()
+    {
+        return discountValue;
     }
 }

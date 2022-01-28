@@ -1,7 +1,6 @@
 package uk.cjack.promotions
 
 import spock.lang.Specification
-import uk.cjack.promotions.PromotionEngine
 import uk.cjack.promotions.model.Order
 import uk.cjack.promotions.model.OrderLine
 
@@ -32,7 +31,7 @@ class PromotionEngineTest extends Specification {
         promotionEngine = new PromotionEngine(order)
 
         then: "Then total order value should be 100"
-        promotionEngine.calculateValue() == 100
+        promotionEngine.getOrderTotal() == 100
     }
 
     /**
@@ -49,7 +48,7 @@ class PromotionEngineTest extends Specification {
         promotionEngine = new PromotionEngine(order)
 
         then: "Then total order value should be 370"
-        promotionEngine.calculateValue() == 370
+        promotionEngine.calculateValue(order.getOrderMap()) == 370
     }
 
     /**
@@ -67,6 +66,6 @@ class PromotionEngineTest extends Specification {
         promotionEngine = new PromotionEngine(order)
 
         then: "Then total order value should be 100"
-        promotionEngine.calculateValue() == 280
+        promotionEngine.calculateValue(order.getOrderMap()) == 280
     }
 }
