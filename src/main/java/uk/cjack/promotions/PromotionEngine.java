@@ -6,6 +6,8 @@ package uk.cjack.promotions;
 
 import java.util.logging.Logger;
 
+import uk.cjack.promotions.loader.CatalogueLoader;
+import uk.cjack.promotions.loader.PromotionLoader;
 import uk.cjack.promotions.model.Order;
 
 /**
@@ -16,6 +18,8 @@ import uk.cjack.promotions.model.Order;
 public class PromotionEngine
 {
 
+    private CatalogueLoader catalogueLoader;
+    private PromotionLoader promotionLoader;
     private static final Logger LOGGER = Logger.getLogger( PromotionEngine.class.getName() );
 
     /**
@@ -25,6 +29,7 @@ public class PromotionEngine
      */
     public PromotionEngine( final Order order )
     {
-
+        catalogueLoader = new CatalogueLoader();
+        promotionLoader = new PromotionLoader();
     }
 }

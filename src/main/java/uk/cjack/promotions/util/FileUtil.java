@@ -23,7 +23,7 @@ public class FileUtil
      *
      * @return list of lines as String value
      */
-    private static List<String> loadResource( final String resourceName)
+    public static List<String> loadResource( final String resourceName)
     {
         final ArrayList<String> resources = new ArrayList<>();
 

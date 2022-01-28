@@ -3,6 +3,9 @@
  */
 package uk.cjack.promotions.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Order
  *
@@ -10,5 +13,6 @@ package uk.cjack.promotions.model;
  */
 public class Order
 {
-
+    private List<OrderLine> orderLines = new ArrayList<>();
+    private Integer originalOrderValue = 0;
 }
