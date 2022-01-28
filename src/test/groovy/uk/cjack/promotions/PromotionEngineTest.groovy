@@ -1,4 +1,12 @@
+/*
+ * Copyright (C) Chris Jackson (github.com/c-jack) - All Rights Reserved
+ * Unauthorised copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Chris Jackson <chris@cjack.uk>, 2022
+ */
+
 package uk.cjack.promotions
+
 
 import spock.lang.Specification
 import uk.cjack.promotions.model.Order
@@ -88,7 +96,7 @@ class PromotionEngineTest extends Specification {
         when: "I call the promotion engine with the given order"
         promotionEngine = new PromotionEngine(order)
 
-        then: "Then total order value should be 100"
+        then: "Then total order value should be 280"
         promotionEngine.getOrderTotal() == 280
     }
 }

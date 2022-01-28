@@ -1,5 +1,8 @@
 /*
- * Copyright 2022 Chris Jackson
+ * Copyright (C) Chris Jackson (github.com/c-jack) - All Rights Reserved
+ * Unauthorised copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Chris Jackson <chris@cjack.uk>, 2022
  */
 package uk.cjack.promotions.util;
 
