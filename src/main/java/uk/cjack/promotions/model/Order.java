@@ -3,32 +3,26 @@
  */
 package uk.cjack.promotions.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
- * Order
+ * POJO representing an 'Order'
  *
  * @author chrisjackson
  */
 public class Order
 {
-    private List<OrderLine> orderLines = new ArrayList<>();
-    private Map<String, Integer> orderMap = new HashMap<>();
-    private Integer originalOrderValue = 0;
+    private final Map<String, Integer> orderMap = new HashMap<>();
     private Integer discountTotal = 0;
 
-
     /**
+     * Constructor
      *
-     * @param orderLines
+     * @param orderLines one or more {@link OrderLine}
      */
     public Order( final OrderLine... orderLines )
     {
-        this.orderLines.addAll( List.of( orderLines ) );
-
         for ( final OrderLine orderLine : orderLines )
         {
             final String sku = orderLine.getSku();
@@ -42,15 +36,7 @@ public class Order
     }
 
     /**
-     * @return The orderLines.
-     */
-    public List<OrderLine> getOrderLines()
-    {
-        return orderLines;
-    }
-
-    /**
-     * @return The orderMap.
+     * @return The Map of order lines
      */
     public Map<String, Integer> getOrderMap()
     {
@@ -58,15 +44,7 @@ public class Order
     }
 
     /**
-     * @return The originalOrderValue.
-     */
-    public Integer getOriginalOrderValue()
-    {
-        return originalOrderValue;
-    }
-
-    /**
-     * @return The discount.
+     * @return The total of the discounted lines on the order
      */
     public Integer getDiscountTotal()
     {
@@ -74,7 +52,7 @@ public class Order
     }
 
     /**
-     * @param discountAmount The discountAmount to add to discount.
+     * @param discountAmount The amount to add to discount total
      */
     public void addDiscountedAmount( final int discountAmount )
     {
