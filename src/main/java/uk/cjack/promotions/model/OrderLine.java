@@ -15,22 +15,21 @@ import uk.cjack.promotions.loader.CatalogueLoader;
 public class OrderLine
 {
     private final String sku;
-    private final Integer cost;
-    private boolean discounted;
 
     /**
+     * Constructor
      *
-     * @param sku
+     * Validates the Order Line SKU by checking if it is in the catalogue.
+     *
+     * @param sku the SKU of the order line
      */
     public OrderLine( final String sku )
     {
         final Map<String, Integer> catalogue = CatalogueLoader.getCatalogue();
 
-        final Integer cost = catalogue.get( sku );
-        if( cost != null )
+        if( catalogue.get( sku ) != null )
         {
             this.sku = sku;
-            this.cost = cost;
         }
         else
         {
@@ -45,21 +44,5 @@ public class OrderLine
     public String getSku()
     {
         return sku;
-    }
-
-    /**
-     * @return The cost.
-     */
-    public Integer getCost()
-    {
-        return cost;
-    }
-
-    /**
-     * @return The discounted.
-     */
-    public boolean isDiscounted()
-    {
-        return discounted;
     }
 }

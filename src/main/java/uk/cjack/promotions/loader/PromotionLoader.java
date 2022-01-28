@@ -22,10 +22,12 @@ public class PromotionLoader
 {
     private static final Logger LOGGER = Logger.getLogger( PromotionLoader.class.getName() );
     private static final String PROMOTIONS_FILE_NAME = "promotions";
-    private List<Promotion> promotionsList = new ArrayList<>();
+    private final List<Promotion> promotionsList = new ArrayList<>();
 
     /**
+     * Constructor
      *
+     * Loads the promotions on instantiation
      */
     public PromotionLoader()
     {

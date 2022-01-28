@@ -76,7 +76,7 @@ public class Order
     /**
      * @param discountAmount The discountAmount to add to discount.
      */
-    public void addDiscountAmount( final int discountAmount )
+    public void addDiscountedAmount( final int discountAmount )
     {
         this.discountTotal += discountAmount;
     }

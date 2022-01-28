@@ -4,9 +4,7 @@
 package uk.cjack.promotions.promotions;
 
 import java.util.HashMap;
-import java.util.List;
 
-import uk.cjack.promotions.model.OrderLine;
 import uk.cjack.promotions.model.Promotion;
 
 /**
@@ -31,6 +29,7 @@ public class BundlePromotion implements Promotion
      *
      * @param discountLogic the discount logic for this bundle promotion
      */
+    @SuppressWarnings( "unused" ) // used via reflection
     public BundlePromotion( final String discountLogic )
     {
         final String[] split = discountLogic.split( EQUALS );
@@ -67,21 +66,6 @@ public class BundlePromotion implements Promotion
             factors.put( sku, factorQuantity );
         }
     }
-
-
-
-    /**
-     * Calculate how much discount should be applied
-     *
-     * @param orderLines the {@link OrderLine}s in the cart
-     *
-     * @throws DiscountNotApplicableException if the discount isn't applicable to this batch
-     */
-    private void calculateDiscount( final List<OrderLine> orderLines ) throws DiscountNotApplicableException
-    {
-     // TODO
-    }
-
 
     /**
      * @return The factors.
